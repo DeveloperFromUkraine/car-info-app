@@ -10,7 +10,7 @@ const Header: FunctionComponent = () => {
     const { menuLink, logoWrapper, logo } = useHeaderStyles();
 
     return (
-        <AppBar color="inherit">
+        <AppBar color="inherit" position='sticky'>
             <Toolbar>
                 <div className={logoWrapper}>
                     <img src={Logo} alt="Logo" className={logo}/>
