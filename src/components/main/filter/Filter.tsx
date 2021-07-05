@@ -1,40 +1,14 @@
 import React, { Fragment } from 'react';
 import {
     Button,
-    createStyles,
     FormControl,
     InputLabel,
-    makeStyles,
     MenuItem,
     Paper,
     Select,
-    Theme
 } from "@material-ui/core";
+import { useStyles } from "./styles";
 
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        formControl: {
-            margin: '8px 24px',
-            minWidth: 120,
-        },
-        filterWrapper: {
-            display: 'flex',
-            flexDirection: 'column',
-            width: theme.spacing(44),
-            height: theme.spacing(32),
-            justifyContent: 'space-between',
-        },
-        buttonWrapper: {
-            margin: theme.spacing(3),
-            justifyContent: 'flex-end',
-            display: 'flex',
-        },
-        button: {
-            color: 'white',
-            minWidth: 150
-        }
-    }),
-);
 const Filter = () => {
     const { formControl, filterWrapper, button, buttonWrapper } = useStyles();
 
@@ -43,8 +17,8 @@ const Filter = () => {
     But in this case, I decided to go in this way, because I clearly understand that I don't have any other filters.
      */
     const [filter, setFilter] = React.useState<{ color: string, manufacturer: string}>({
-        color: '',
-        manufacturer: ''
+        color: 'all',
+        manufacturer: 'all'
     });
 
     const handleChange = (event: React.ChangeEvent<{ name?: string | any; value: unknown; }>) => {
@@ -83,7 +57,7 @@ const Filter = () => {
                         onChange={handleChange}
                         name='manufacturer'
                     >
-                        <MenuItem value="">
+                        <MenuItem value="all">
                             <em>None</em>
                         </MenuItem>
                         <MenuItem value={'Volvo'}>Volvo</MenuItem>
