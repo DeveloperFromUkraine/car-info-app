@@ -3,7 +3,7 @@ import { AppBar, Link, Toolbar } from '@material-ui/core';
 import { Link as RouterLink } from 'react-router-dom';
 import Logo from '../../images/logo.png';
 
-import { useHeaderStyles } from "./utils/styles";
+import { useHeaderStyles } from "./styles";
 
 
 const Header: FunctionComponent = () => {

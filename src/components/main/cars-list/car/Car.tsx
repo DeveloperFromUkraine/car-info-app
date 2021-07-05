@@ -5,21 +5,9 @@ import {
     CardActions,
     CardContent,
     CardMedia,
-    makeStyles,
     Typography
 } from "@material-ui/core";
-
-const useStyles = makeStyles({
-    root: {
-        display: "flex"
-    },
-    media: {
-        height: 80,
-        width: 80,
-        margin: 30,
-        objectFit: 'contain'
-    },
-});
+import { useStyles } from "./styles";
 
 const Car = () => {
     const classes = useStyles();
