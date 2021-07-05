@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import {
     Button,
     createStyles,
@@ -13,9 +13,6 @@ import {
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
-        root: {
-            margin: theme.spacing(3.75)
-        },
         formControl: {
             margin: '8px 24px',
             minWidth: 120,
@@ -39,7 +36,7 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 const Filter = () => {
-    const { root, formControl, filterWrapper, button, buttonWrapper } = useStyles();
+    const { formControl, filterWrapper, button, buttonWrapper } = useStyles();
 
     /*
     In best practice, we should not use multiple states in function component with useState
@@ -58,7 +55,7 @@ const Filter = () => {
     };
 
     return (
-        <div className={root}>
+        <Fragment>
             <Paper variant="outlined" square className={filterWrapper}>
                 <FormControl className={formControl}>
                     <InputLabel id="color-select-label">Color</InputLabel>
@@ -100,7 +97,7 @@ const Filter = () => {
                     </Button>
                 </div>
             </Paper>
-        </div>
+        </Fragment>
     );
 };
 
