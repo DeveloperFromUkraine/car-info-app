@@ -56,7 +56,7 @@ const Filter = () => {
             [event.target.name]: event.target.value
         }));
     };
-    
+
     return (
         <div className={root}>
             <Paper variant="outlined" square className={filterWrapper}>
