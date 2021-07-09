@@ -2,7 +2,9 @@ import { makeStyles } from "@material-ui/core";
 
 export const useStyles = makeStyles({
     root: {
-        display: "flex"
+        display: "flex",
+        marginBottom: 30,
+        maxHeight: 150
     },
     media: {
         height: 80,
