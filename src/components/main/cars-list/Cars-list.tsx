@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { Car } from "./car/Car";
-import { createStyles, makeStyles, Theme } from "@material-ui/core";
+import { Button, createStyles, makeStyles, Theme, Typography } from "@material-ui/core";
 import './Car-list.scss';
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -8,6 +8,11 @@ const useStyles = makeStyles((theme: Theme) =>
             display: 'flex',
             justifyContent: 'space-between'
         },
+        paginationWrapper: {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+        }
     }),
 );
 const CarsList = () => {
@@ -48,12 +53,20 @@ const CarsList = () => {
             <Car />
             <Car />
             <Car />
-            <div>
-                <button onClick={handleBelow} value={1}>first</button>
-                <button onClick={handleBelow} value={currentPage > FIRST_PAGE ? currentPage - 1 : 1}>prev</button>
-                <span>{currentPage} of {availablePages} pages</span>
-                <button onClick={handleAbove} value={currentPage === availablePages ? '' : currentPage + 1}>next</button>
-                <button onClick={handleAbove} value={availablePages}>last</button>
+            <div className={classes.paginationWrapper}>
+                <Button size="small" onClick={handleBelow} value={1} color='primary'>
+                    First
+                </Button>
+                <Button size="small" onClick={handleBelow} value={currentPage > FIRST_PAGE ? currentPage - 1 : 1} color='primary'>
+                    Prev
+                </Button>
+                <Typography>{currentPage} of {availablePages} pages</Typography>
+                <Button onClick={handleAbove} value={currentPage === availablePages ? '' : currentPage + 1} color='primary'>
+                    Next
+                </Button>
+                <Button onClick={handleAbove} value={availablePages} color='primary'>
+                    Last
+                </Button>
             </div>
         </Fragment>
     );
