@@ -17,7 +17,7 @@ const filterData = ({ colors, manufacturers }: IFilterData):IActionGETFilters =>
     return {
         type: GET_FILTERS,
         payload: {
-            colors,
+            colors: colors.map((color: string) => color.charAt(0).toUpperCase() + color.slice(1)),
             manufacturers: manufacturers.map(({ name }) => name)
         }
     }
