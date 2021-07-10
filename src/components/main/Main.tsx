@@ -1,15 +1,9 @@
 import React from 'react';
-import { Filter } from "./filter/Filter";
-import CarsList from "./cars-list/Cars-list";
-import { createStyles, Grid, makeStyles, Theme } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        root: {
-            margin: theme.spacing(3.75)
-        },
-    }),
-);
+import { Filter } from "../filter/Filter";
+import CarsList from "../cars-list/Cars-list";
+import { useStyles } from "./styles";
 
 const Main = () => {
     const { root } = useStyles();
